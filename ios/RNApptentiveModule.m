@@ -43,9 +43,6 @@ RCT_EXPORT_METHOD(
 											  apptentiveSignature:configurationDictionary[@"apptentiveSignature"]];
 
 	ApptentiveLogLevel logLevel = ApptentiveLogLevelFromString([configurationDictionary[@"logLevel"] lowercaseString]);
-	if (logLevel == ApptentiveLogLevelUndefined) {
-		rejecter(kRejectCode, [NSString stringWithFormat:@"%@ is not a valid log level", configurationDictionary[@"logLevel"]], nil);
-	}
 
 	[configuration setLogLevel:logLevel];
 
